@@ -13,10 +13,16 @@ class Project(info: ProjectInfo) extends DefaultProject(info) with ProguardProje
   val extraResources = "README.md" +++ "LICENSE"
   override val mainResources = super.mainResources +++ extraResources
 
+  //turn down logging level to 'warn'
+  log.setLevel(Level.Warn)
+
   //program entry point
   override def mainClass: Option[String] = Some("com.yuvimasory.myproj.Main")
 
+  //compiler options
   override def compileOptions = super.compileOptions ++ Seq(Deprecation, Unchecked) //ExplainTypes
+
+  //scaladocs options
   override def documentOptions = super.documentOptions ++ Seq(LinkSource)
 
   //proguard
