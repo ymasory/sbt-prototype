@@ -20,10 +20,14 @@ class Project(info: ProjectInfo) extends DefaultProject(info) with ProguardProje
   override def mainClass: Option[String] = Some("com.yuvimasory.myproj.Main")
 
   //compiler options
-  override def compileOptions = super.compileOptions ++ Seq(Deprecation, Unchecked) //ExplainTypes
+  override def compileOptions = Deprecation :: Unchecked :: Nil //ExplainTypes
 
-  //scaladocs options
-  override def documentOptions = super.documentOptions ++ Seq(LinkSource)
+  //scaladoc options
+  override def documentOptions =
+    LinkSource ::
+    documentTitle(name + " " + version + " API") ::
+    windowTitle(name + " " + version + " API") ::
+    Nil
 
   //proguard
   override def proguardOptions = List(
