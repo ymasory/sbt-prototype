@@ -20,7 +20,9 @@ class Project(info: ProjectInfo) extends DefaultProject(info) with ProguardProje
   override def mainClass: Option[String] = Some("com.yuvimasory.myproj.Main")
 
   //compiler options
-  override def compileOptions = Deprecation :: Unchecked :: Nil //ExplainTypes
+  /* override def compileOptions = Deprecation :: Unchecked :: Nil //ExplainTypes */
+  super.compileOptions ++ Seq("-deprecation", "-unchecked").map(CompileOption(_))
+  override def javaCompileOptions = JavaCompileOption("-Xlint:unchecked") :: super.javaCompileOptions.toList
 
   //scaladoc options
   override def documentOptions =
