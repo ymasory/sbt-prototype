@@ -1,6 +1,7 @@
 import sbt._
 
-class Project(info: ProjectInfo) extends DefaultProject(info) with ProguardProject with Exec {
+class Project(info: ProjectInfo) extends DefaultProject(info)
+  with ProguardProject with Exec {
   
   //project name
   override val artifactID = "myproj"
@@ -21,9 +22,10 @@ class Project(info: ProjectInfo) extends DefaultProject(info) with ProguardProje
   override def mainClass: Option[String] = Some("com.yuvimasory.myproj.Main")
 
   //compiler options
-  /* override def compileOptions = Deprecation :: Unchecked :: Nil //ExplainTypes */
-  override def compileOptions = super.compileOptions ++ Seq("-deprecation", "-unchecked").map(CompileOption(_))
-  override def javaCompileOptions = JavaCompileOption("-Xlint:unchecked") :: super.javaCompileOptions.toList
+  override def compileOptions = super.compileOptions ++
+    compileOptions("-deprecation", "-unchecked")
+  override def javaCompileOptions =
+    JavaCompileOption("-Xlint:unchecked") :: super.javaCompileOptions.toList
 
   //scaladoc options
   override def documentOptions =
@@ -34,8 +36,10 @@ class Project(info: ProjectInfo) extends DefaultProject(info) with ProguardProje
 
   //proguard
   override def proguardOptions = List(
-    "-keepclasseswithmembers public class * { public static void main(java.lang.String[]); }",
+    "-keepclasseswithmembers " +
+    "public class * { public static void main(java.lang.String[]); }",
     proguardKeepAllScala
   )
-  override def proguardInJars = Path.fromFile(scalaLibraryJar) +++ super.proguardInJars
+  override def proguardInJars =
+    Path.fromFile(scalaLibraryJar) +++ super.proguardInJars
 }
