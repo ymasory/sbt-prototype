@@ -13,15 +13,16 @@ class Project(info: ProjectInfo) extends DefaultProject(info) with ProguardProje
   val extraResources = "README.md" +++ "LICENSE"
   override val mainResources = super.mainResources +++ extraResources
 
-  //turn down logging level to 'warn'
+  //turn down logging a bit
   log.setLevel(Level.Warn)
+  log.setTrace(2)
 
   //program entry point
   override def mainClass: Option[String] = Some("com.yuvimasory.myproj.Main")
 
   //compiler options
   /* override def compileOptions = Deprecation :: Unchecked :: Nil //ExplainTypes */
-  super.compileOptions ++ Seq("-deprecation", "-unchecked").map(CompileOption(_))
+  override def compileOptions = super.compileOptions ++ Seq("-deprecation", "-unchecked").map(CompileOption(_))
   override def javaCompileOptions = JavaCompileOption("-Xlint:unchecked") :: super.javaCompileOptions.toList
 
   //scaladoc options
