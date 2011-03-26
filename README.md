@@ -11,3 +11,4 @@
 * `cd` into the `sbt-prototype` directory.
 * Run `grep -ri myproj . | grep -v target`. Replace every instance of `myproj` with your project's name.
 * Run `grep -ri yuvimasory . | grep -v target` and replace every instance of `com.yuvimasory` with your package name.
+* If you change your program entry point from the provided one, remember to update the `mainClass` definition in `project/build/Project.scala`.
