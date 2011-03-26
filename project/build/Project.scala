@@ -7,7 +7,7 @@ class Project(info: ProjectInfo) extends DefaultProject(info)
   override val artifactID = "myproj"
 
   //managed dependencies from built-in repositories
-  val scalatest = "org.scalatest" % "scalatest" % "1.2"
+  val scalatest = "org.scalatest" % "scalatest" % "1.3"
   // val jsap = "com.martiansoftware" % "jsap" % "2.1"
   
   //files to go in packaged jars
