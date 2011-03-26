@@ -13,3 +13,4 @@
 * Run `grep -ri yuvimasory . | grep -v target` and replace every instance of `com.yuvimasory` with your package name.
 * Fill in the `LICENSE` file with the text of your program's license.
 * If you change your program entry point from the provided one, remember to update the `mainClass` definition in `project/build/Project.scala`.
+* If you want to change your program's version number from `alpha` to something more descriptive, like `1.0`, update the `project.version` definition in `project/build.properties`.
