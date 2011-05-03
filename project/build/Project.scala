@@ -10,6 +10,12 @@ class Project(info: ProjectInfo) extends DefaultProject(info)
   val scalatest = "org.scalatest" % "scalatest" % "1.3"
   // val jsap = "com.martiansoftware" % "jsap" % "2.1"
   
+  //dependencies from external repositories
+  // val scalaToolsSnapshots = (
+  //   "Scala-Tools Maven2 Snapshots Repository" at
+  //   "http://scala-tools.org/repo-snapshots"
+  // )
+
   //files to go in packaged jars
   val extraResources = "README.md" +++ "LICENSE"
   override val mainResources = super.mainResources +++ extraResources
