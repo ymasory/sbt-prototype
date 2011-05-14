@@ -42,7 +42,8 @@ class Project(info: ProjectInfo) extends DefaultProject(info)
 
   //proguard
   override def proguardOptions = List(
-    "-dontshrink -dontoptimize -dontobfuscate -dontpreverify",
+    "-dontshrink -dontoptimize -dontobfuscate -dontpreverify -dontnote " +
+    "-ignorewarnings",
     proguardKeepAllScala
   )
   override def proguardInJars =
