@@ -2,7 +2,7 @@ name := "myproj"
 
 version := "alpha"
 
-crossScalaVersions := Seq("2.9.0")
+scalaVersion := "2.9.0-1"
 
 mainClass in (Compile, packageBin) := Some("com.yuvimasory.myproj.Main")
 
@@ -13,7 +13,7 @@ logLevel := Level.Warn
 traceLevel := 5
 
 libraryDependencies ++= Seq (
-  "org.scala-tools.testing" %% "scalacheck" % "1.8"
+  "org.scala-tools.testing" %% "scalacheck" % "1.9"
   //"com.martiansoftware" % "jsap" % "2.1"
 )
 
