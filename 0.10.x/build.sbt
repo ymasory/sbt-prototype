@@ -13,7 +13,7 @@ logLevel := Level.Warn
 traceLevel := 5
 
 libraryDependencies ++= Seq (
-  "org.scalatest" % "scalatest_2.9.0" % "1.6.1"
+  "org.scala-tools.testing" %% "scalacheck" % "1.8"
   //"com.martiansoftware" % "jsap" % "2.1"
 )
 

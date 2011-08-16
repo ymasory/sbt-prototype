@@ -1,18 +1,15 @@
 package com.yuvimasory.myproj
 
-import org.scalatest.FunSuite
+import org.scalacheck._
 
-class MainTest extends FunSuite {
+object MainTest extends Properties("Main") {
+  import Prop.forAll
 
-  test("myproj dummy test works") {
-    assert(1 === 1)
+  property("startsWith") = forAll { (a: String, b: String) => 
+    (a+b).startsWith(a)
+  }
 
-    expect(1) {
-      2 - 1
-    }
-
-    intercept[IllegalArgumentException] {
-      throw new IllegalArgumentException()
-    }
+  property("endsWith") = forAll { (a: String, b: String) => 
+    (a+b).endsWith(b)
   }
 }
