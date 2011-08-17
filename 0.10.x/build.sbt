@@ -32,6 +32,8 @@ libraryDependencies <<= (scalaVersion, libraryDependencies) { (sv, deps) =>
            scalaCheckVersion % "test")
 }
 
+//resolvers += ScalaToolsSnapshots
+
 //java dependencies
 libraryDependencies ++= Seq (
   //"com.martiansoftware" % "jsap" % "2.1"
@@ -72,11 +74,6 @@ publishMavenStyle := true
 //UNPORTED FROM 0.7.x prototype
 // extraResources = "README.rst" +++ "LICENSE"
 // mainResources = super.mainResources +++ extraResources
-
-// val scalaToolsSnapshots = (
-//   "Scala-Tools Maven2 Snapshots Repository" at
-//   "http://scala-tools.org/repo-snapshots"
-// )
 
 // override def documentOptions =
 //   LinkSource ::
