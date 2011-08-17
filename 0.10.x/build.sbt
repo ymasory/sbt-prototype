@@ -1,12 +1,12 @@
-//basic project info
+//BASIC PROJECT INFO
 name := "myproj"
 
 organization := "com.yuvimasory"
 
 version := "alpha"
 
-//scala versions and options
-scalaVersion := "2.9.0-1"
+//SCALA VERSIONS AND OPTIONS
+SCALAVERSION := "2.9.0-1"
 
 crossScalaVersions := Seq("2.9.0-1", "2.9.0", "2.8.1", "2.8.0")
 
@@ -14,12 +14,12 @@ scalacOptions ++= Seq("-deprecation", "-unchecked")
 
 javacOptions ++= Seq("-Xlint:unchecked")
 
-//entry point
+//ENTRY POINT
 mainClass in (Compile, packageBin) := Some("com.yuvimasory.myproj.Main")
 
 mainClass in (Compile, run) := Some("com.yuvimasory.myproj.Main")
 
-//scala dependencies
+//SCALA DEPENDENCIES
 libraryDependencies <<= (scalaVersion, libraryDependencies) { (sv, deps) =>
   val scalaCheckVersionMap = Map("2.8.0"   -> ("scalacheck_2.8.0",   "1.7"),
                                  "2.8.1"   -> ("scalacheck_2.8.1",   "1.8"),
@@ -32,14 +32,15 @@ libraryDependencies <<= (scalaVersion, libraryDependencies) { (sv, deps) =>
            scalaCheckVersion % "test")
 }
 
+//only uncomment if you need dependencies from the snapshots repo
 //resolvers += ScalaToolsSnapshots
 
-//java dependencies
+//JAVA DEPENDENCIES
 libraryDependencies ++= Seq (
   //"com.martiansoftware" % "jsap" % "2.1"
 )
 
-//sbt behavior
+//SBT BEHAVIOR
 fork in Test := true
 
 fork in Compile := true
@@ -48,7 +49,7 @@ logLevel := Level.Info //higher than Info suppresses your own printlns
 
 traceLevel := 5
 
-//proguard
+//PROGUARD
 seq(ProguardPlugin.proguardSettings :_*)
 
 proguardOptions ++= Seq (
@@ -58,7 +59,11 @@ proguardOptions ++= Seq (
 )
 
 
-//publishing
+//PUBLISHING
+
+//this results in warnings if the listed file doesn't exist
+// credentials += Credentials(Path.userHome / ".scala-tools")
+
 publishTo <<= version {(v: String) =>
     val nexus = "http://nexus.scala-tools.org/content/repositories/"
     if (v.trim.endsWith("SNAPSHOT")) Some("snapshots" at nexus + "snapshots/") 
@@ -67,8 +72,11 @@ publishTo <<= version {(v: String) =>
 
 publishMavenStyle := true
 
-// credentials += Credentials(Path.userHome / ".scala-tools")
+publishArtifact in (Test, packageBin) := false
 
+publishArtifact in (Compile, packageDoc):= false
+
+publishArtifact in (Compile, packageSrc):= false
 
 
 //UNPORTED FROM 0.7.x prototype
