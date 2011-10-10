@@ -12,7 +12,7 @@ crossScalaVersions := Seq("2.9.0-1", "2.9.0", "2.8.1", "2.8.0")
 
 scalacOptions ++= Seq("-deprecation", "-unchecked")
 
-javacOptions ++= Seq("-Xlint:unchecked")
+javacOptions ++= Seq("-Xlint:unchecked", "-Xlint:deprecation")
 
 //ENTRY POINT
 mainClass in (Compile, packageBin) := Some("com.yuvimasory.myproj.Main")
