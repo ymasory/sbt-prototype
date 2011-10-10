@@ -6,9 +6,9 @@ organization := "com.yuvimasory"
 version := "alpha"
 
 //SCALA VERSIONS AND OPTIONS
-scalaVersion := "2.9.0-1"
+scalaVersion := "2.9.1"
 
-crossScalaVersions := Seq("2.9.0-1", "2.9.0", "2.8.1", "2.8.0")
+crossScalaVersions := Seq("2.9.1", "2.9.0-1", "2.9.0", "2.8.1", "2.8.0")
 
 scalacOptions ++= Seq("-deprecation", "-unchecked")
 
@@ -24,7 +24,8 @@ libraryDependencies <<= (scalaVersion, libraryDependencies) { (sv, deps) =>
   val scalaCheckVersionMap = Map("2.8.0"   -> ("scalacheck_2.8.0",   "1.7"),
                                  "2.8.1"   -> ("scalacheck_2.8.1",   "1.8"),
                                  "2.9.0"   -> ("scalacheck_2.9.0",   "1.8"),
-                                 "2.9.0-1" -> ("scalacheck_2.9.0-1", "1.9"))
+                                 "2.9.0-1" -> ("scalacheck_2.9.0-1", "1.9"),
+                                 "2.9.1"   -> ("scalacheck_2.9.1",   "1.9"))
   val (scalaCheckArtifact, scalaCheckVersion) = scalaCheckVersionMap.getOrElse(
     sv, error("Unsupported Scala version: " + scalaVersion)
   )
