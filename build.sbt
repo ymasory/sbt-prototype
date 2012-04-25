@@ -3,12 +3,12 @@ name := "myproj"
 
 organization := "com.yuvimasory"
 
-version := "alpha"
+version := "1.0.0-SNAPSHOT"
 
 //SCALA VERSIONS AND OPTIONS
-scalaVersion := "2.9.1"
+scalaVersion := "2.9.2"
 
-crossScalaVersions := Seq("2.9.1", "2.9.0-1", "2.9.0", "2.8.1", "2.8.0")
+crossScalaVersions := Seq("2.9.1", "2.9.0")
 
 scalacOptions ++= Seq("-deprecation", "-unchecked")
 
@@ -19,27 +19,14 @@ mainClass in (Compile, packageBin) := Some("com.yuvimasory.myproj.Main")
 
 mainClass in (Compile, run) := Some("com.yuvimasory.myproj.Main")
 
-//SCALA DEPENDENCIES
-libraryDependencies <<= (scalaVersion, libraryDependencies) { (sv, deps) =>
-  val scalaCheckVersionMap = Map("2.8.0"   -> ("scalacheck_2.8.0",   "1.7"),
-                                 "2.8.1"   -> ("scalacheck_2.8.1",   "1.8"),
-                                 "2.9.0"   -> ("scalacheck_2.9.0",   "1.8"),
-                                 "2.9.0-1" -> ("scalacheck_2.9.0-1", "1.9"),
-                                 "2.9.1"   -> ("scalacheck_2.9.1",   "1.9"))
-  val (scalaCheckArtifact, scalaCheckVersion) = scalaCheckVersionMap.getOrElse(
-    sv, error("Unsupported Scala version: " + scalaVersion)
-  )
-  deps :+ ("org.scala-tools.testing" % scalaCheckArtifact %
-           scalaCheckVersion % "test")
-}
+//DEPENDENCIES
+libraryDependencies ++= Seq (
+  "org.scalacheck" %% "scalacheck" % "1.9" % "test"
+  //"com.martiansoftware" % "jsap" % "2.1"
+)
 
 //only uncomment if you need dependencies from the snapshots repo
 //resolvers += ScalaToolsSnapshots
-
-//JAVA DEPENDENCIES
-libraryDependencies ++= Seq (
-  //"com.martiansoftware" % "jsap" % "2.1"
-)
 
 //SBT BEHAVIOR
 fork in Test := true
