@@ -37,6 +37,9 @@ logLevel := Level.Info //higher than Info suppresses your own printlns
 
 traceLevel := 5
 
+//disables dynamic updating, e.g., SNAPSHOTS
+//offline := true
+
 //PROGUARD
 seq(ProguardPlugin.proguardSettings :_*)
 
