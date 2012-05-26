@@ -6,7 +6,7 @@ Warning: you *must* use sbt version 0.11.3. Due to the `scala-tools.org` debacle
 
 ## Features ##
 ### sbt plugins ###
-- **xsbt-proguard-plugin**. Generate an executable jar of your project.
+- **[xsbt-proguard-plugin](https://github.com/siasia/xsbt-proguard-plugin)**. Generate an executable jar of your project.
 
 ```
 $ sbt
@@ -17,7 +17,7 @@ $ java -jar ./target/scala-2.9.2/prototype-project_2.9.2-1.0.0-SNAPSHOT.min.jar
 hello, prototype-project v1.0.0-SNAPSHOT running with Scala v2.9.2 on sbt v0.11.3
 ```
 
-- **sbt-dependency-graph**. Visualize your artifact dependency graph.
+- **[sbt-dependency-graph](https://github.com/jrudolph/sbt-dependency-graph)**. Visualize your artifact dependency graph.
 
 ```
 $ sbt
@@ -30,7 +30,7 @@ $ sbt
 [success] Total time: 0 s, completed May 26, 2012 1:30:29 PM
 ```
 
-- **sbt-git-plugin**. Control git directly from the sbt shell.
+- **[sbt-git-plugin](https://github.com/sbt/sbt-git-plugin)**. Control git directly from the sbt shell.
 
 (Note you cannot have spaces in commit messages until [this issue](https://github.com/sbt/sbt-git-plugin/issues/11) is solved.)
 
@@ -75,7 +75,7 @@ nothing to commit (working directory clean)
 nothing to commit (working directory clean)
 ```
 
-- **sbt-man**. Access scaladocs and scalex.com directly from the sbt shell.
+- **[sbt-man](https://github.com/sbt/sbt-man)**. Access scaladocs and scalex.com directly from the sbt shell.
 
 ```
 $ sbt
@@ -112,7 +112,7 @@ hello, prototype-project v1.0.0-SNAPSHOT running with Scala v2.9.2 on sbt v0.11.
 - **sbt-buildinfo**. Access sbt properties at runtime.
 This is already integrated. As you can see, `Main.scala` has access to the artifact name, version, etc.
 
-- **ensime-sbt-cmd**. Generate your `.ensime` file for ENSIME integration.
+- **[ensime-sbt-cmd](https://github.com/aemoncannon/ensime-sbt-cmd)**. Generate your `.ensime` file for ENSIME integration.
 
 ```
 $ sbt
@@ -144,7 +144,7 @@ $ sbt
 ```
 
 ### Other features ###
-- **ScalaCheck**. Write specification based tests that write lots of unit tests for you.
+- **[ScalaCheck](https://github.com/rickynils/scalacheck)**. Write specification based tests that write lots of unit tests for you.
 
 ```
 $ sbt
