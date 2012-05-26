@@ -115,7 +115,7 @@ This is already integrated. As you can see, `Main.scala` has access to the artif
 - **ensime-sbt-cmd**. Generate your `.ensime` file for ENSIME integration.
 
 ```
-$ sbt11
+$ sbt
 > ensime generate
 [info] Gathering project information...
 [info] Processing project: ProjectRef(file:/Users/yuvi/workspace/ymasory/sbt-prototype/,default-0e69ae)...
@@ -147,7 +147,7 @@ $ sbt11
 - **ScalaCheck**. Write specification based tests that write lots of unit tests for you.
 
 ```
-$ sbt11
+$ sbt
 [info] Loading global plugins from /Users/yuvi/Dropbox/documents/software/dot-files/sbt-plugins
 [info] Loading project definition from /Users/yuvi/workspace/ymasory/sbt-prototype/project
 [info] Set current project to prototype-project (in build file:/Users/yuvi/workspace/ymasory/sbt-prototype/)
