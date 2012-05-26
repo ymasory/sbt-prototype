@@ -8,7 +8,7 @@ version := "1.0.0-SNAPSHOT"
 //SCALA VERSIONS AND OPTIONS
 scalaVersion := "2.9.2"
 
-crossScalaVersions := Seq("2.9.1", "2.9.0")
+crossScalaVersions := Seq("2.9.1")
 
 scalacOptions ++= Seq("-deprecation", "-unchecked")
 
