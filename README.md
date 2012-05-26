@@ -97,7 +97,7 @@ $ sbt
 [man] def ordering: Ordering
 ```
 
-- **xsbt-start-script-plugin**. Generate a start script so you're not using `sbt run` in production.
+- **[xsbt-start-script-plugin](https://github.com/typesafehub/xsbt-start-script-plugin)**. Generate a start script so you're not using `sbt run` in production.
 
 ```
 $ sbt
