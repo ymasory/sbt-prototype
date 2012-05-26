@@ -109,7 +109,7 @@ $ ./target/start
 hello, prototype-project v1.0.0-SNAPSHOT running with Scala v2.9.2 on sbt v0.11.3
 ```
 
-- **sbt-buildinfo**. Access sbt properties at runtime.
+- **[sbt-buildinfo](https://github.com/sbt/sbt-buildinfo)**. Access sbt properties at runtime.
 This is already integrated. As you can see, `Main.scala` has access to the artifact name, version, etc.
 
 - **[ensime-sbt-cmd](https://github.com/aemoncannon/ensime-sbt-cmd)**. Generate your `.ensime` file for ENSIME integration.
