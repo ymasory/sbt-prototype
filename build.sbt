@@ -29,7 +29,7 @@ libraryDependencies ++= Seq (
 //resolvers += ScalaToolsSnapshots
 
 //sbt behavior
-logLevel := Level.Warn //higher than Info suppresses your own printlns
+logLevel := Level.Info //higher than Info suppresses your own printlns
 
 traceLevel := 5
 
