@@ -5,6 +5,16 @@ Warning: you *must* use sbt version 0.11.3. Due to the `scala-tools.org` debacle
 ## Features ##
 ### sbt plugins ###
 - **xsbt-proguard-plugin**. Generate an executable jar of your project.
+
+```
+$ sbt
+> proguard
+[success] Total time: 19 s, completed May 26, 2012 1:24:33 PM
+> exit
+$ java -jar ./target/scala-2.9.2/prototype-project_2.9.2-1.0.0-SNAPSHOT.min.jar
+hello, prototype-project v1.0.0-SNAPSHOT running with Scala v2.9.2 on sbt v0.11.3
+```
+
 - **sbt-dependency-graph**. Visualize your artifact dependency graph.
 - **sbt-git-plugin**. Control git directly from the sbt shell.
 - **sbt-man**. Access scaladocs and scalex.com directly from the sbt shell.
