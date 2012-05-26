@@ -1,5 +1,3 @@
-package com.yuvimasory.myproj
-
 import org.scalacheck._
 
 object MainTest extends Properties("Main") {
