@@ -64,10 +64,26 @@ $ ./target/start
 hello, prototype-project v1.0.0-SNAPSHOT running with Scala v2.9.2 on sbt v0.11.3
 ```
 
+- **sbt-buildinfo**. Access sbt properties at runtime.
+This is already integrated. As you can see, `Main.scala` has access to the artifact name, version, etc.
+
 ### Other features ###
 - **ScalaCheck**. Write specification based tests that write lots of unit tests for you.
+
+```
+$ sbt11
+[info] Loading global plugins from /Users/yuvi/Dropbox/documents/software/dot-files/sbt-plugins
+[info] Loading project definition from /Users/yuvi/workspace/ymasory/sbt-prototype/project
+[info] Set current project to prototype-project (in build file:/Users/yuvi/workspace/ymasory/sbt-prototype/)
+> test
+[info] + Main.startsWith: OK, passed 100 tests.
+[info] + Main.endsWith: OK, passed 100 tests.
+[info] Passed: : Total 2, Failed 0, Errors 0, Passed 2, Skipped 0
+[success] Total time: 1 s, completed May 26, 2012 2:18:01 PM
+```
+
 - **gitignore**. The `.gitignore` file is ready to go.
-- **sbt tweaks**. E.g., logging and stack traces are turned down to be less distracting.
+- **sbt tweaks**. _E.g._, stack traces are reduce to be less distracting, main class is specified. See `built.sbt` to learn about all tweaks.
 
 ## Customize for your project ##
 * Change all the references in `build.sbt` and `Main.scala` from `com.example` to your package.
