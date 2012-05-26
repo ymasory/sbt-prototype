@@ -1,5 +1,7 @@
 # sbt-prototype is the starting point for all my projects #
 
+Warning: you *must* use sbt version 0.11.3. Due to the `scala-tools.org` debacle, sbt can no longer download other versions of itself automatically.
+
 ## Features ##
 ### sbt plugins ###
 - **xsbt-proguard-plugin**. Generate an executable jar of your project.
@@ -14,7 +16,8 @@
 - **sbt tweaks**. E.g., logging and stack traces are turned down to be less distracting.
 
 ## Customize for your project ##
-* If you change your program entry point from the provided one, remember to update the `mainClass` definitions in `build.sbt`.
-* If you want to change your program's version number from `alpha` to something more descriptive, like `1.0`, update the `version` definition in `build.sbt`.
+* Change all the references in `build.sbt` and `Main.scala` from `com.example` to your package.
+* Change the artifact name in `build.sbt` from `prototype-project'` to your desired project name.
+* Change the artifact version in `build.sbt` from `1.0.0-SNAPSHOT` to your desired version.
 * Fill in the `LICENSE` file with the text of your program's license.
 * Change this `README.md` file to something about your project.
