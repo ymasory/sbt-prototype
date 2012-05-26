@@ -30,6 +30,47 @@ $ sbt
 
 - **sbt-git-plugin**. Control git directly from the sbt shell.
 
+```
+$ sbt
+> git status
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#       modified:   README.md
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+
+> git add .
+
+> git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       modified:   README.md
+#
+
+> git commit -m 'add-to-readme'  
+[master 5a18b87] 'add-to-readme'
+ 1 file changed, 17 insertions(+), 1 deletion(-)
+
+> git status
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#
+nothing to commit (working directory clean)
+
+> git push
+[error] To git@github.com:ymasory/sbt-prototype.git
+[error]    2af9c45..5a18b87  master -> master
+
+> git status
+# On branch master
+nothing to commit (working directory clean)
+```
+
 - **sbt-man**. Access scaladocs and scalex.com directly from the sbt shell.
 
 ```
