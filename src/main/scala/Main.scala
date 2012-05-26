@@ -1,11 +1,18 @@
+package com.example
+
 import scalaz._
 import Scalaz._
 import effects._
 
 object Main {
+  import BuildInfo._
 
   def pmain(args: Vector[String]): IO[Unit] =
-    putStrLn("sbt-prototype project running!!")
+    putStrLn(
+      "hello, %s v%s running with Scala v%s on sbt v%s" format (
+        name, version, scalaVersion, sbtVersion
+      )
+    )
 
   def main(args: Array[String]) = pmain(Vector.empty ++ args).unsafePerformIO
 }

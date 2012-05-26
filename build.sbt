@@ -1,11 +1,11 @@
-//BASIC PROJECT INFO
-name := "myproj"
+//basic project info
+name := "prototype-project"
 
-organization := "com.yuvimasory"
+organization := "com.example"
 
 version := "1.0.0-SNAPSHOT"
 
-//SCALA VERSIONS AND OPTIONS
+//scala versions and options
 scalaVersion := "2.9.2"
 
 crossScalaVersions := Seq("2.9.1")
@@ -14,12 +14,12 @@ scalacOptions ++= Seq("-deprecation", "-unchecked")
 
 javacOptions ++= Seq("-Xlint:unchecked", "-Xlint:deprecation")
 
-//ENTRY POINT
-mainClass in (Compile, packageBin) := Some("Main")
+//entry point
+mainClass in (Compile, packageBin) := Some("com.example.Main")
 
-mainClass in (Compile, run) := Some("Main")
+mainClass in (Compile, run) := Some("com.example.Main")
 
-//DEPENDENCIES
+//dependencies
 libraryDependencies ++= Seq (
   "org.scalaz" %% "scalaz-core" % "6.0.4",
   "org.scalacheck" %% "scalacheck" % "1.9" % "test"
@@ -28,12 +28,12 @@ libraryDependencies ++= Seq (
 //only uncomment if you need dependencies from the snapshots repo
 //resolvers += ScalaToolsSnapshots
 
-//SBT BEHAVIOR
+//sbt behavior
 logLevel := Level.Warn //higher than Info suppresses your own printlns
 
 traceLevel := 5
 
-//PROGUARD-PLUGIN
+//proguard-plugin
 seq(ProguardPlugin.proguardSettings :_*)
 
 proguardOptions ++= Seq (
@@ -42,10 +42,19 @@ proguardOptions ++= Seq (
     keepAllScala
 )
 
-//DEPENDECY-GRAPH-PLUGIN
+//dependecy-graph-plugin
 net.virtualvoid.sbt.graph.Plugin.graphSettings
 
-//START-SCRIPT-PLUGIN
+//start-script-plugin
 seq(
   com.typesafe.startscript.StartScriptPlugin.startScriptForClassesSettings: _*
 )
+
+//buildinfo-plugin
+buildInfoSettings
+
+sourceGenerators in Compile <+= buildInfo
+
+buildInfoKeys := Seq[Scoped](name, version, scalaVersion, sbtVersion)
+
+buildInfoPackage := "com.example"
