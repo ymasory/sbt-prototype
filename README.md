@@ -2,6 +2,8 @@
 
 Warning: you *must* use sbt version 0.11.3. Due to the `scala-tools.org` debacle, sbt can no longer download other versions of itself automatically.
 
+*Please let me know if any software is out of date. That includes scala version, sbt version, and plugin versions.*
+
 ## Features ##
 ### sbt plugins ###
 - **xsbt-proguard-plugin**. Generate an executable jar of your project.
