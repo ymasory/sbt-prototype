@@ -160,7 +160,7 @@ $ sbt
 
 ## Customize for your project ##
 * Change all the references in `build.sbt` and `Main.scala` from `com.example` to your package.
-* Change the artifact name in `build.sbt` from `prototype-project'` to your desired project name.
+* Change the artifact name in `build.sbt` from `prototype-project` to your desired project name.
 * Change the artifact version in `build.sbt` from `1.0.0-SNAPSHOT` to your desired version.
 * Fill in the `LICENSE` file with the text of your program's license.
 * Change this `README.md` file to something about your project.
