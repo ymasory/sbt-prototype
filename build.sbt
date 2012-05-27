@@ -34,7 +34,7 @@ initialCommands := """|import scalaz._
 //resolvers += ScalaToolsSnapshots
 
 //sbt behavior
-logLevel := Level.Info //higher than Info suppresses your own printlns
+logLevel in compile := Level.Warn
 
 traceLevel := 5
 
