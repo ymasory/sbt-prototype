@@ -148,9 +148,6 @@ $ sbt
 
 ```
 $ sbt
-[info] Loading global plugins from /Users/yuvi/Dropbox/documents/software/dot-files/sbt-plugins
-[info] Loading project definition from /Users/yuvi/workspace/ymasory/sbt-prototype/project
-[info] Set current project to prototype-project (in build file:/Users/yuvi/workspace/ymasory/sbt-prototype/)
 > test
 [info] + Main.startsWith: OK, passed 100 tests.
 [info] + Main.endsWith: OK, passed 100 tests.
