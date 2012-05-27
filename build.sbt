@@ -25,6 +25,11 @@ libraryDependencies ++= Seq (
   "org.scalacheck" %% "scalacheck" % "1.9" % "test"
 )
 
+//improve REPL
+initialCommands := """|import scalaz._
+                      |import Scalaz._
+                      |""".stripMargin
+
 //only uncomment if you need dependencies from the snapshots repo
 //resolvers += ScalaToolsSnapshots
 
