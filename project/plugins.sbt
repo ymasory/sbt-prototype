@@ -9,6 +9,8 @@ resolvers += Resolver.url(
 
 addSbtPlugin("com.jsuereth" % "sbt-git-plugin" % "0.4")
 
+resolvers += "jgit-repo" at "http://download.eclipse.org/jgit/maven"
+
 addSbtPlugin("com.eed3si9n" % "sbt-man" % "0.1.0")
 
 addSbtPlugin("net.virtual-void" % "sbt-dependency-graph" % "0.6.0")
