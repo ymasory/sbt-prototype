@@ -63,3 +63,56 @@ sourceGenerators in Compile <+= buildInfo
 buildInfoKeys := Seq[Scoped](name, version, scalaVersion, sbtVersion)
 
 buildInfoPackage := "com.example"
+
+//publishing
+publishMavenStyle := true
+
+publishTo <<= version { (v: String) =>
+  val nexus = "https://oss.sonatype.org/"
+  if (v.trim.endsWith("SNAPSHOT")) Some(
+    "snapshots" at nexus + "content/repositories/snapshots"
+  )
+  else Some("releases" at nexus + "service/local/staging/deploy/maven2")
+}
+
+publishArtifact in Test := false
+
+pomIncludeRepository := { _ => false }
+
+pomExtra := (
+  <url>https://github.com/ACCOUNT/MYPROJ</url>
+  <licenses>
+    <license>
+      <name>LICENSE NAME</name>
+      <url>https://github.com/ACCOUNT/MYPROJ/blob/master/LICENSE</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>git@github.com:ACCOUNT/MYPROJ.git</url>
+    <connection>scm:git:git@github.com:ACCOUNT/MYPROJ.git</connection>
+  </scm>
+  <developers>
+    <developer>
+      <id>HANDLE</id>
+      <name>MY FULL NAME</name>
+      <email>EMAIL</email>
+      <url>HOMEPAGE</url>
+    </developer>
+  </developers>
+)
+
+// pgpPassphrase := Some("PASSWORD".toCharArray)
+
+// pgpSigningKey := Some(0L)
+
+// pgpSecretRing := file("/path/to/file")
+
+// pgpPublicRing := file("/path/to/file")
+
+// credentials += Credentials(
+//   "Sonatype Nexus Repository Manager",
+//   "oss.sonatype.org",
+//   "ACCOUNT",
+//   IO read file("/path/to/file")
+// )
