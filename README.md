@@ -1,6 +1,6 @@
 # sbt-prototype is the starting point for all my projects #
 
-Warning: you *must* use sbt version 0.11.3. Due to the `scala-tools.org` debacle, sbt can no longer download other versions of itself automatically.
+Warning: you *must* use sbt version 0.11.3-2 or higher. sbt is again able to download other versions of itself, so you may be able to change the sbt version declared in `project/build.properties` if you need to.
 
 *Please let me know if any software is out of date. That includes scala version, sbt version, and plugin versions.*
 
