@@ -1,12 +1,12 @@
 # sbt-prototype is the starting point for all my projects #
 
-Warning: you *must* use sbt version 0.11.3-2 or higher. sbt is again able to download other versions of itself, so you may be able to change the sbt version declared in `project/build.properties` if you need to.
+Warning: you *must* use sbt version 0.11.3-2 or higher to launch this project. If you use a lower version sbt won't be able to switch to the right version. If you use a higher version (like say, 0.12), no sweat, it will automatically download 0.11.3-2 for you. This prototype won't move to 0.12 until all the needed plugins are updated.
 
 *Please let me know if any software is out of date. That includes scala version, sbt version, and plugin versions.*
 
 ## Features ##
 ### sbt plugins ###
-- **[xsbt-proguard-plugin](https://github.com/siasia/xsbt-proguard-plugin)**. Generate an executable jar of your project.
+- **[xsbt-proguard-plugin](https://github.com/siasia/xsbt-proguard-plugin)**. Generate an executable jar of your project. *NOTE: CURRENTLY WAITING FOR SBT 0.12 UPDATE FOR THIS PLUGIN *
 
 ```
 $ sbt
@@ -17,7 +17,7 @@ $ java -jar ./target/scala-2.9.2/prototype-project_2.9.2-1.0.0-SNAPSHOT.min.jar
 hello, prototype-project v1.0.0-SNAPSHOT running with Scala v2.9.2 on sbt v0.11.3
 ```
 
-- **[sbt-dependency-graph](https://github.com/jrudolph/sbt-dependency-graph)**. Visualize your artifact dependency graph.
+- **[sbt-dependency-graph](https://github.com/jrudolph/sbt-dependency-graph)**. Visualize your artifact dependency graph. *NOTE: CURRENTLY WAITING FOR SBT 0.12 UPDATE FOR THIS PLUGIN *
 
 ```
 $ sbt
