@@ -21,13 +21,16 @@ mainClass in (Compile, run) := Some("com.example.Main")
 
 //dependencies
 libraryDependencies ++= Seq (
-  "org.scalaz" %% "scalaz-core" % "6.0.4",
+  "org.scalaz" %% "scalaz-core" % "7.0.0-M2",
+  "org.scalaz" %% "scalaz-effect" % "7.0.0-M2",
   "org.scalacheck" %% "scalacheck" % "1.9" % "test"
 )
 
 //improve REPL
 initialCommands := """|import scalaz._
-                      |import Scalaz._
+                      |import std.option._
+                      |import std.list._
+                      |println("scalaz 7 loaded!")
                       |""".stripMargin
 
 //only uncomment if you need dependencies from the snapshots repo

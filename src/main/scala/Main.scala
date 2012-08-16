@@ -1,8 +1,8 @@
 package com.example
 
 import scalaz._
-import Scalaz._
-import effects._
+import effect._
+import IO._
 
 object Main {
   import BuildInfo._
