@@ -6,7 +6,7 @@ Warning: you *must* use sbt version 0.11.3-2 or higher to launch this project. I
 
 ## Features ##
 ### sbt plugins ###
-- **[xsbt-proguard-plugin](https://github.com/siasia/xsbt-proguard-plugin)**. Generate an executable jar of your project. *NOTE: CURRENTLY WAITING FOR SBT 0.12 UPDATE FOR THIS PLUGIN *
+- **[xsbt-proguard-plugin](https://github.com/siasia/xsbt-proguard-plugin)**. Generate an executable jar of your project. **NOTE: CURRENTLY WAITING FOR SBT 0.12 UPDATE FOR THIS PLUGIN**
 
 ```
 $ sbt
@@ -17,7 +17,7 @@ $ java -jar ./target/scala-2.9.2/prototype-project_2.9.2-1.0.0-SNAPSHOT.min.jar
 hello, prototype-project v1.0.0-SNAPSHOT running with Scala v2.9.2 on sbt v0.11.3
 ```
 
-- **[sbt-dependency-graph](https://github.com/jrudolph/sbt-dependency-graph)**. Visualize your artifact dependency graph. *NOTE: CURRENTLY WAITING FOR SBT 0.12 UPDATE FOR THIS PLUGIN *
+- **[sbt-dependency-graph](https://github.com/jrudolph/sbt-dependency-graph)**. Visualize your artifact dependency graph. **NOTE: CURRENTLY WAITING FOR SBT 0.12 UPDATE FOR THIS PLUGIN**
 
 ```
 $ sbt
