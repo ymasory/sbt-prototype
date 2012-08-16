@@ -27,14 +27,22 @@ libraryDependencies ++= Seq (
 )
 
 //improve REPL
-initialCommands := """|import scalaz._
-                      |import std.option._
-                      |import std.list._
-                      |println("scalaz 7 loaded!")
-                      |""".stripMargin
+initialCommands in console :=
+  """|import scalaz._
+     |import std.option._
+     |import std.list._
+     |println("scalaz 7 loaded!")
+     |""".stripMargin
 
-//only uncomment if you need dependencies from the snapshots repo
-//resolvers += ScalaToolsSnapshots
+//you may need these repos
+resolvers ++= Seq(
+  // "sonatype snapshots" at "https://oss.sonatype.org/content/repositories/snapshots",
+  // "sonatype releases" at "https://oss.sonatype.org/content/repositories/releases",
+  // Classpaths.typesafeResolver,
+  // Classpaths.typesafeSnapshots,
+  // JavaNet1Repository,
+  // JavaNet2Repository,
+)
 
 //sbt behavior
 logLevel in compile := Level.Warn

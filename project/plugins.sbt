@@ -1,15 +1,12 @@
-resolvers += Classpaths.typesafeResolver
+resolvers ++= Seq(
+  "jgit-repo" at "http://download.eclipse.org/jgit/maven",
+  Resolver.url(
+    "scalasbt",
+    new URL("http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases")
+  )(Resolver.ivyStylePatterns)
+)
 
-resolvers += "Sonatype OSS" at "https://oss.sonatype.org/content/repositories/releases"
-
-resolvers += "jgit-repo" at "http://download.eclipse.org/jgit/maven"
-
-resolvers += Resolver.url(
-  "scalasbt",
-  new URL("http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases")
-)(Resolver.ivyStylePatterns)
-
-libraryDependencies ++= Seq (
+libraryDependencies ++= Seq ( //note old scala and sbt versions
   "com.github.siasia" % "xsbt-proguard-plugin_2.9.1" % "0.11.2-0.1.2"
 )
 
