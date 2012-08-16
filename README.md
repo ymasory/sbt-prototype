@@ -38,8 +38,6 @@ $ sbt
 
 - **[sbt-git-plugin](https://github.com/sbt/sbt-git-plugin)**. Control git directly from the sbt shell.
 
-(Note you cannot have spaces in commit messages until [this issue](https://github.com/sbt/sbt-git-plugin/issues/11) is solved.)
-
 ```
 $ sbt
 > git status
