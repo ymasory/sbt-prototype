@@ -49,24 +49,22 @@ logLevel in compile := Level.Warn
 
 traceLevel := 5
 
-//proguard-plugin
-seq(ProguardPlugin.proguardSettings :_*)
+//assembly plugin
+mainClass in AssemblyKeys.assembly := Some("com.example.Main")
 
-proguardOptions ++= Seq (
-    "-dontshrink -dontoptimize -dontobfuscate -dontpreverify -dontnote " +
-    "-ignorewarnings",
-    keepAllScala
-)
+assemblySettings
 
-//dependecy-graph-plugin
-net.virtualvoid.sbt.graph.Plugin.graphSettings
+test in AssemblyKeys.assembly := {}
 
-//start-script-plugin
+//dependecy graph plugin (waiting for sbt 0.12.0 update)
+// net.virtualvoid.sbt.graph.Plugin.graphSettings
+
+//start script plugin
 seq(
   com.typesafe.startscript.StartScriptPlugin.startScriptForClassesSettings: _*
 )
 
-//buildinfo-plugin
+//buildinfo plugin
 buildInfoSettings
 
 sourceGenerators in Compile <+= buildInfo

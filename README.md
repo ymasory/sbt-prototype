@@ -1,19 +1,25 @@
 # sbt-prototype is the starting point for all my projects #
 
-Warning: you *must* use sbt version 0.11.3-2 or higher to launch this project. If you use a lower version sbt won't be able to switch to the right version. If you use a higher version (like say, 0.12), no sweat, it will automatically download 0.11.3-2 for you. This prototype won't move to 0.12 until all the needed plugins are updated.
+Warning: you *must* use sbt version 0.11.3-2 or higher to launch this project. After that sbt will automatically retrieve the correct version of sbt all by itself.
 
 *Please let me know if any software is out of date. That includes scala version, sbt version, and plugin versions.*
 
 ## Features ##
 ### sbt plugins ###
-- **[xsbt-proguard-plugin](https://github.com/siasia/xsbt-proguard-plugin)**. Generate an executable jar of your project. **NOTE: CURRENTLY WAITING FOR SBT 0.12 UPDATE FOR THIS PLUGIN**
+- **[sbt-assembly](https://github.com/sbt/sbt-assembly)**. Generate a single (executable) jar of your project.
 
 ```
 $ sbt
-> proguard
-[success] Total time: 19 s, completed May 26, 2012 1:24:33 PM
+> assembly
+[info] Including scalaz-core_2.9.2-7.0.0-M2.jar
+[info] Including scalaz-effect_2.9.2-7.0.0-M2.jar
+[info] Including scala-library.jar
+[info] Merging 'META-INF/MANIFEST.MF' with strategy 'discard'
+[info] Packaging /Users/yuvi/workspace/ymasory/sbt-prototype/target/prototype-project-assembly-1.0.0-SNAPSHOT.jar ...
+[info] Done packaging.
+[success] Total time: 11 s, completed Aug 16, 2012 1:00:42 AM
 > exit
-$ java -jar ./target/scala-2.9.2/prototype-project_2.9.2-1.0.0-SNAPSHOT.min.jar
+$ java -jar target/prototype-project-assembly-1.0.0-SNAPSHOT.jar
 hello, prototype-project v1.0.0-SNAPSHOT running with Scala v2.9.2 on sbt v0.11.3
 ```
 
