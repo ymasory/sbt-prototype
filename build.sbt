@@ -6,10 +6,9 @@ organization := "com.example"
 version := "1.0.0-SNAPSHOT"
 
 // description := "an awesome program"
-
 // homepage := Some( url("http://example.com"))
-
 // licenses := Seq("GPLv3" -> url("http://www.gnu.org/licenses/gpl-3.0.html"))
+// organizationName := "My Company"
 
 /* scala versions and options */
 scalaVersion := "2.9.2"
