@@ -1,11 +1,17 @@
-//basic project info
+/* basic project info */
 name := "prototype-project"
 
 organization := "com.example"
 
 version := "1.0.0-SNAPSHOT"
 
-//scala versions and options
+// description := "an awesome program"
+
+// homepage := Some( url("http://example.com"))
+
+// licenses := Seq("GPLv3" -> url("http://www.gnu.org/licenses/gpl-3.0.html"))
+
+/* scala versions and options */
 scalaVersion := "2.9.2"
 
 crossScalaVersions := Seq("2.9.1")
@@ -14,19 +20,19 @@ scalacOptions ++= Seq("-deprecation", "-unchecked")
 
 javacOptions ++= Seq("-Xlint:unchecked", "-Xlint:deprecation")
 
-//entry point
+/* entry point */
 mainClass in (Compile, packageBin) := Some("com.example.Main")
 
 mainClass in (Compile, run) := Some("com.example.Main")
 
-//dependencies
+/* dependencies */
 libraryDependencies ++= Seq (
   "org.scalaz" %% "scalaz-core" % "7.0.0-M2",
   "org.scalaz" %% "scalaz-effect" % "7.0.0-M2",
   "org.scalacheck" %% "scalacheck" % "1.9" % "test"
 )
 
-//improve REPL
+/* improve REPL */
 initialCommands in console :=
   """|import scalaz._
      |import Scalaz._
@@ -34,7 +40,7 @@ initialCommands in console :=
      |println("scalaz 7 loaded!")
      |""".stripMargin
 
-//you may need these repos
+/* you may need these repos */
 resolvers ++= Seq(
   // "sonatype snapshots" at "https://oss.sonatype.org/content/repositories/snapshots",
   // "sonatype releases" at "https://oss.sonatype.org/content/repositories/releases",
@@ -44,27 +50,27 @@ resolvers ++= Seq(
   // JavaNet2Repository,
 )
 
-//sbt behavior
+/* sbt behavior */
 logLevel in compile := Level.Warn
 
 traceLevel := 5
 
-//assembly plugin
+/* assembly plugin */
 mainClass in AssemblyKeys.assembly := Some("com.example.Main")
 
 assemblySettings
 
 test in AssemblyKeys.assembly := {}
 
-//dependecy graph plugin (waiting for sbt 0.12.0 update)
+/* dependecy graph plugin (waiting for sbt 0.12.0 update) */
 // net.virtualvoid.sbt.graph.Plugin.graphSettings
 
-//start script plugin
+/* start script plugin */
 seq(
   com.typesafe.startscript.StartScriptPlugin.startScriptForClassesSettings: _*
 )
 
-//buildinfo plugin
+/* buildinfo plugin */
 buildInfoSettings
 
 sourceGenerators in Compile <+= buildInfo
@@ -73,7 +79,7 @@ buildInfoKeys := Seq[Scoped](name, version, scalaVersion, sbtVersion)
 
 buildInfoPackage := "com.example"
 
-//publishing
+/* publishing */
 publishMavenStyle := true
 
 publishTo <<= version { (v: String) =>
