@@ -29,8 +29,8 @@ libraryDependencies ++= Seq (
 //improve REPL
 initialCommands in console :=
   """|import scalaz._
-     |import std.option._
-     |import std.list._
+     |import Scalaz._
+     |import com.example._
      |println("scalaz 7 loaded!")
      |""".stripMargin
 
