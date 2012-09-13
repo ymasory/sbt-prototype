@@ -61,8 +61,8 @@ assemblySettings
 
 test in AssemblyKeys.assembly := {}
 
-// dependecy graph plugin (waiting for sbt 0.12.0 update) //
-// net.virtualvoid.sbt.graph.Plugin.graphSettings
+/* dependecy graph plugin */
+net.virtualvoid.sbt.graph.Plugin.graphSettings
 
 /* start script plugin */
 seq(
