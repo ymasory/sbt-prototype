@@ -23,7 +23,7 @@ $ java -jar target/prototype-project-assembly-1.0.0-SNAPSHOT.jar
 hello, prototype-project v1.0.0-SNAPSHOT running with Scala v2.9.2 on sbt v0.11.3
 ```
 
-- **[sbt-dependency-graph](https://github.com/jrudolph/sbt-dependency-graph)**. Visualize your artifact dependency graph. **NOTE: CURRENTLY WAITING FOR SBT 0.12 UPDATE FOR THIS PLUGIN**
+- **[sbt-dependency-graph](https://github.com/jrudolph/sbt-dependency-graph)**. Visualize your artifact dependency graph.
 
 ```
 $ sbt
