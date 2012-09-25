@@ -7,7 +7,6 @@ version := "1.0.0-SNAPSHOT"
 
 // description := "an awesome program"
 // homepage := Some( url("http://example.com"))
-// licenses := Seq("GPLv3" -> url("http://www.gnu.org/licenses/gpl-3.0.html"))
 // organizationName := "My Company"
 
 /* scala versions and options */
@@ -116,17 +115,5 @@ pomExtra := (
   </developers>
 )
 
-// pgpPassphrase := Some("PASSWORD".toCharArray)
-
-// pgpSigningKey := Some(0L)
-
-// pgpSecretRing := file("/path/to/file")
-
-// pgpPublicRing := file("/path/to/file")
-
-// credentials += Credentials(
-//   "Sonatype Nexus Repository Manager",
-//   "oss.sonatype.org",
-//   "ACCOUNT",
-//   IO read file("/path/to/file")
-// )
+// Josh Suereth's step-by-step guide to publishing on sonatype
+// httpcom://www.scala-sbt.org/using_sonatype.html

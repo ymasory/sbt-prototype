@@ -12,6 +12,4 @@ addSbtPlugin("com.typesafe.startscript" % "xsbt-start-script-plugin" % "0.5.3")
 
 addSbtPlugin("com.eed3si9n" % "sbt-buildinfo" % "0.1.2")
 
-addSbtPlugin("com.jsuereth" % "xsbt-gpg-plugin" % "0.6")
-
 addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.8.3")
