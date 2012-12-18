@@ -2,6 +2,8 @@
 
 # sbt-prototype is the starting point for all my projects #
 
+<a href='http://ci.yuvimasory.com/job/sbt-prototype/'><img src='http://ci.yuvimasory.com/job/sbt-prototype/badge/icon'></a>
+
 Warning: you *must* use sbt version 0.11.3-2 or higher to launch this project. After that sbt will automatically retrieve the correct version of sbt all by itself.
 
 *Please let me know if any software is out of date. That includes scala version, sbt version, and plugin versions.*
