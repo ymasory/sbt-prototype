@@ -1,3 +1,5 @@
+# DEPRECATED: use https://github.com/ymasory/sbt.g8 #
+
 # sbt-prototype is the starting point for all my projects #
 
 Warning: you *must* use sbt version 0.11.3-2 or higher to launch this project. After that sbt will automatically retrieve the correct version of sbt all by itself.
